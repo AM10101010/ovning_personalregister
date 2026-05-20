@@ -4,10 +4,8 @@ public class EmployeeService
 {
     private readonly List<Employee> _employees = new();
 
-
     public void AddEmployee(Employee employee)
-    {
-        
+    {   
         _employees.Add(employee);
     }
 
