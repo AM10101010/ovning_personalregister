@@ -1,6 +1,7 @@
+using Personalregister;
 using RestaurantEmployeeRegistry;
 
-public class EmployeeService
+public class EmployeeService : IEmployeeService
 {
     private readonly List<Employee> _employees = new();
 
@@ -14,9 +15,9 @@ public class EmployeeService
         return _employees;
     }
     
-    public Employee? GetEmployeeById(int id)
+    public Employee GetEmployeeById(int id)
     {
-         return _employees.FirstOrDefault(e => e.Id == id);
+         return _employees.FirstOrDefault(e => e.Id == id)!;
     }
 
     public void RemoveEmployee(int id)
