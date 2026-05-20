@@ -93,7 +93,7 @@ void AddEmployee()
     var lastName = Console.ReadLine();
 
     Console.WriteLine("Ange roll:");
-    
+
     var roleInput = Console.ReadLine();
     if (!Enum.TryParse<Role>(roleInput, out var role))
     {
@@ -151,4 +151,4 @@ void RemoveEmployee()
 
     employeeService.RemoveEmployee(id);
     Console.WriteLine("Anställd borttagen.");
-}      
+}
