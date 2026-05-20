@@ -1,8 +1,7 @@
 ﻿using Personalregister;
 using RestaurantEmployeeRegistry;
 
-//IEmployeeService employeeService = new FakeEmployeeService();
-IEmployeeService employeeService = new EmployeeService();
+IEmployeeService employeeService = new FakeEmployeeService();
 
 employeeService.AddEmployee(new Employee
 {

@@ -1,7 +1,7 @@
 using Personalregister;
 using RestaurantEmployeeRegistry;
 
-public class EmployeeService : IEmployeeService
+public class FakeEmployeeService : IEmployeeService
 {
     private readonly List<Employee> _employees = new();
 
