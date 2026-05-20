@@ -52,10 +52,10 @@ while (true)
             ListAllEmployees();
             break;
         case "3":
-            // Code to find employee by ID
+            FindEmployeeById();
             break;
         case "4":
-            // Code to remove employee
+            RemoveEmployee();
             break;
         case "0":
             return;
@@ -82,6 +82,7 @@ void ListAllEmployees()
         Console.WriteLine(emp);
     }
 }
+
 void AddEmployee()
 {
     Console.WriteLine("Ange förnamn:");
@@ -118,3 +119,35 @@ void AddEmployee()
     employeeService.AddEmployee(newEmployee);
     Console.WriteLine("Anställd tillagd!");
 }
+void FindEmployeeById()
+{
+    Console.WriteLine("Ange ID för att söka:");
+    if (!int.TryParse(Console.ReadLine(), out var id))
+    {
+        Console.WriteLine("Ogiltigt ID, försök igen.");
+        return;
+    }
+
+    var employee = employeeService.GetEmployeeById(id);
+    if (employee != null)
+    {
+        Console.WriteLine(employee);
+    }
+    else
+    {
+        Console.WriteLine("Ingen anställd hittades med det ID:t.");
+    }
+}
+
+void RemoveEmployee()
+{
+    Console.WriteLine("Ange ID för att ta bort:");
+    if (!int.TryParse(Console.ReadLine(), out var id))
+    {
+        Console.WriteLine("Ogiltigt ID, försök igen.");
+        return;
+    }
+
+    employeeService.RemoveEmployee(id);
+    Console.WriteLine("Anställd borttagen.");
+}      
